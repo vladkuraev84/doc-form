@@ -1,0 +1,63 @@
+{
+	"config": {
+		"step_by_step": "strict",
+		"modules": [
+			{
+				"name": "menu",
+				"enable": false,
+				"config": {
+					"list": [
+						{
+							"id": 11,
+							"pageId": 11,
+							"position": 1,
+							"enable": true,
+							"title": "menu.welcome"
+						}
+					]
+				}
+			}
+		],
+		"apiBaseUrl": "http://localhost:8081/api/",
+		"localization": {
+			"defaultLang": "en",
+			"availableLangs": ["en", "fr", "ua", "ru"]
+		},
+		"styles": {
+			"value": [
+				"form-widget-g .fieldset-title p { margin-bottom: 20px; }",
+				"form-widget-g .bordered-block { border: 1px solid #565656; border-radius: 6px; padding: 10px; padding-bottom: 0px; margin-bottom: 20px; }",
+				"form-widget-g .field-inform-text { font-size: 0.7rem; }"
+			]
+		},
+		"variables": {}
+	},
+	"pages": [
+		{
+			"id": 11,
+			"key": "w",
+			"description": "W",
+			"components": [
+				{
+					"common": {
+						"type": "InputEmail",
+						"model": "email",
+						"enable": true
+					},
+					"validation": {
+						"required": true,
+						"pattern": "/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$/",
+						"texts": {
+							"required": "errors.required",
+							"pattern": "#Please enter a valid email address"
+						}
+					},
+					"text": {
+						"placeholder": "#name@company.com",
+						"label": "#E-mail address"
+					}
+				}
+			]
+		}
+	]
+}
